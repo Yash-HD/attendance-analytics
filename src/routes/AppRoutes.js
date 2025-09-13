@@ -8,6 +8,13 @@ import DashboardPage from '../pages/student/DashboardPage';
 import AttendancePage from '../pages/student/AttendancePage';
 import LeavePage from '../pages/student/LeavePage';
 import ProfilePage from '../pages/student/ProfilePage';
+import FacultyDashboard from '../pages/faculty/FacultyDashboard';
+import MyClassesPage from '../pages/faculty/MyClassesPage';
+import ReportsPage from '../pages/faculty/ReportsPage';
+import LeaveManagementPage from '../pages/faculty/LeaveManagementPage';
+import FacultyProfilePage from '../pages/faculty/FacultyProfilePage';
+import FacultyMainLayout from '../components/faculty/FacultyMainLayout';
+import LiveSessionPage from '../pages/faculty/LiveSessionPage';
 
 export default function AppRoutes() {
 	return (
@@ -24,6 +31,17 @@ export default function AppRoutes() {
 				<Route path="/student/attendance" element={<AttendancePage />} />
 				<Route path="/student/leave" element={<LeavePage />} />
 				<Route path="/student/profile" element={<ProfilePage />} />
+
+				{/* Faculty Portal Routes */}
+				<Route element={<FacultyMainLayout />}>
+					<Route path="/faculty" element={<Navigate to="/faculty/dashboard" replace />} />
+					<Route path="/faculty/dashboard" element={<FacultyDashboard />} />
+					<Route path="/faculty/classes" element={<MyClassesPage />} />
+					<Route path="/faculty/reports" element={<ReportsPage />} />
+					<Route path="/faculty/leave" element={<LeaveManagementPage />} />
+					<Route path="/faculty/profile" element={<FacultyProfilePage />} />
+					<Route path="/faculty/session/:classId" element={<LiveSessionPage />} />
+				</Route>
 			</Routes>
 		</BrowserRouter>
 	);
