@@ -40,10 +40,10 @@ const Sidebar = ({ isOpen, onClose }) => {
 						<span>My Profile</span>
 					</Link>
 					<div className="mt-4 pt-4 border-t border-white/20 md:border-gray-200 md:dark:border-white/10" />
-					<button type="button" className="flex items-center gap-3 px-3 py-2 rounded-md text-red-200 md:text-red-600 hover:bg-red-50/10 md:hover:bg-red-50">
+					<Link to="/" className="flex items-center gap-3 px-3 py-2 rounded-md text-red-200 md:text-red-600 hover:bg-red-50/10 md:hover:bg-red-50">
 						<FaSignOutAlt />
 						<span>Logout</span>
-					</button>
+					</Link>
 				</nav>
 			</aside>
 		</>
