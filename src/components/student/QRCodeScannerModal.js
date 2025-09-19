@@ -102,7 +102,7 @@ export default function QRCodeScannerModal({ isOpen, onClose }) {
       default:
         return (
           <>
-            <h3 className="text-xl font-bold text-center">Scan QR Code</h3>
+            <h3 className="text-xl font-bold text-center  dark:text-gray-300">Scan QR Code</h3>
             <div id="qr-reader" className="w-full mt-4"></div>
           </>
         );

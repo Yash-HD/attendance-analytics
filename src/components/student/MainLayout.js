@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaThLarge, FaChartBar, FaCalendarCheck, FaUser, FaSignOutAlt, FaSun, FaMoon } from 'react-icons/fa';
+import { FaThLarge, FaChartBar, FaCalendarAlt, FaUser, FaSignOutAlt, FaSun, FaMoon } from 'react-icons/fa';
 import { FiMenu } from 'react-icons/fi';
 import { useTheme } from '../../contexts/ThemeProvider';
 
@@ -31,9 +31,9 @@ const Sidebar = ({ isOpen, onClose }) => {
 						<FaChartBar className="text-primary" />
 						<span>My Attendance</span>
 					</Link>
-					<Link to="/student/leave" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10">
-						<FaCalendarCheck className="text-primary" />
-						<span>Leave Management</span>
+					<Link to="/student/timetable" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10">
+    					<FaCalendarAlt className="text-primary" />
+    					<span>My Timetable</span>
 					</Link>
 					<Link to="/student/profile" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10">
 						<FaUser className="text-primary" />
@@ -135,7 +135,7 @@ const MainLayout = ({ children }) => {
 	const titleMap = {
 		'/student/dashboard': 'Dashboard',
 		'/student/attendance': 'My Attendance',
-		'/student/leave': 'Leave Management',
+		'/student/timetable': 'My Timetable',
 		'/student/profile': 'My Profile',
 	};
 	const currentTitle = titleMap[location.pathname] || 'Dashboard';

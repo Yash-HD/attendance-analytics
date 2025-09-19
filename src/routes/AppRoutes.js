@@ -6,7 +6,7 @@ import FacultyLoginPage from '../pages/FacultyLoginPage';
 import AdminLoginPage from '../pages/AdminLoginPage';
 import DashboardPage from '../pages/student/DashboardPage';
 import AttendancePage from '../pages/student/AttendancePage';
-import LeavePage from '../pages/student/LeavePage';
+import TimetablePage from '../pages/student/TimetablePage';
 import ProfilePage from '../pages/student/ProfilePage';
 import FacultyDashboard from '../pages/faculty/FacultyDashboard';
 import MyClassesPage from '../pages/faculty/MyClassesPage';
@@ -29,7 +29,7 @@ export default function AppRoutes() {
 				<Route path="/student" element={<Navigate to="/student/dashboard" replace />} />
 				<Route path="/student/dashboard" element={<DashboardPage />} />
 				<Route path="/student/attendance" element={<AttendancePage />} />
-				<Route path="/student/leave" element={<LeavePage />} />
+				<Route path="/student/timetable" element={<TimetablePage />} />
 				<Route path="/student/profile" element={<ProfilePage />} />
 
 				{/* Faculty Portal Routes */}
