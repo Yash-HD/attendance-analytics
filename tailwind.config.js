@@ -11,6 +11,7 @@ module.exports = {
         secondary: {
           light: '#1E293B', // For light mode sidebars
           dark: '#0F172A',  // For dark mode sidebars/backgrounds
+          lightdarkish: '#2c4173',
         },
         background: {
           light: '#F8FAFC',

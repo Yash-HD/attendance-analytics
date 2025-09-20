@@ -20,7 +20,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 				} md:block`}
 			>
 				<div className="h-16 flex items-center px-4 border-b border-gray-200 dark:border-white/10">
-					<span className="text-lg font-semibold text-gray-800 dark:text-white">Attendance System</span>
+					<span className="text-lg font-semibold text-gray-800 dark:text-white">TrackEd</span>
 				</div>
 				<nav className="p-4 flex flex-col gap-1 text-gray-800 dark:text-white">
 					<Link to="/student/dashboard" className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-primary/10">
