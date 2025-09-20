@@ -102,7 +102,7 @@ export default function QRCodeScannerModal({ isOpen, onClose }) {
       default:
         return (
           <>
-            <h3 className="text-xl font-bold text-center  dark:text-gray-300">Scan QR Code</h3>
+            <h3 className="text-xl font-bold text-center  dark:text-black">Scan QR Code</h3>
             <div id="qr-reader" className="w-full mt-4"></div>
           </>
         );
@@ -111,7 +111,7 @@ export default function QRCodeScannerModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="relative bg-white dark:bg-secondary-dark rounded-xl shadow-lg p-6 w-full max-w-sm h-[500px]">
+      <div className="relative bg-white dark:bg-gray-400 rounded-xl shadow-lg p-6 w-full max-w-sm h-[500px]">
         {scanState !== 'processing' && (
           <button onClick={onClose} className="absolute top-2 right-2 text-2xl text-gray-500 hover:text-gray-800">&times;</button>
         )}

@@ -44,7 +44,7 @@ const RoleSelectionPage = () => {
 
 	// Typewriter effect for the title only
 	const fullTitle = 'Welcome! Choose Your Role';
-	const fullSubtitle = 'Select a role to continue to the appropriate experience.';
+	const fullSubtitle = 'Automated Student Attendance Monitoring and Analytics System';
 	const [titleIndex, setTitleIndex] = useState(0);
 	const [subtitleVisible, setSubtitleVisible] = useState(false);
 	const titleDone = titleIndex >= fullTitle.length;
@@ -103,13 +103,13 @@ const RoleSelectionPage = () => {
 				<RoleCard
 					icon={FaUserGraduate}
 					title="Student"
-					description="Access courses, assignments, and academic resources tailored for students."
+					description="Mark and Track your attendence , one stop for your Attendence Analytics "
 					onClick={() => handleRoleSelection('Student')}
 				/>
 				<RoleCard
 					icon={FaChalkboardTeacher}
 					title="Faculty"
-					description="Manage classes, create content, and track student progress efficiently."
+					description="Manage classes, and track student progress efficiently."
 					onClick={() => handleRoleSelection('Faculty')}
 				/>
 				<RoleCard
