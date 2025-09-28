@@ -30,8 +30,8 @@ export default function ProfilePage() {
             // --- SIMULATION ---
             setTimeout(() => {
                 const mockData = {
-                    first_name: "Sunny",
-                    middle_name: "Raj",
+                    first_name: "Rohan",
+                    middle_name: "",
                     last_name: "Kumar",
                     roll_number: "202430063",
                     date_of_birth: "2002-05-15",
