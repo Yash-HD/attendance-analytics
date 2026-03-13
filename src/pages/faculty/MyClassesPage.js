@@ -159,34 +159,36 @@ export default function MyClassesPage() {
                 </div>
 
                 {/* Laptop First: Highly Structured Container Grid */}
-                <div className="hidden lg:grid grid-cols-5 gap-4">
-                    {daysOfWeek.map((day, dayIndex) => (
-                        <div key={day} className="flex flex-col bg-platinum-200/30 dark:bg-onyx-900/30 border border-platinum-200 dark:border-onyx-800/60 rounded-[2rem] p-3 shadow-inner h-[72vh]">
-                            
-                            {/* Column Header */}
-                            <div className="bg-white dark:bg-onyx-800 border border-platinum-200 dark:border-onyx-700 shadow-sm rounded-[1.25rem] p-4 text-center mb-4 shrink-0 flex flex-col items-center gap-1 relative overflow-hidden">
-                                {timetable[day]?.length > 0 && <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dark-teal-400 to-stormy-teal-600"></div>}
-                                <h3 className="font-black text-[17px] text-onyx-900 dark:text-platinum-50 tracking-tight">{day}</h3>
-                                <p className="text-[10px] font-black uppercase tracking-widest text-onyx-500 bg-platinum-100 dark:bg-onyx-900/60 px-2 py-0.5 rounded-md">
-                                    {timetable[day]?.length || 0} Sessions
-                                </p>
-                            </div>
-                            
-                            {/* Column Content Area */}
-                            <div className="flex flex-col gap-3 overflow-y-auto pr-1 pb-2 custom-scrollbar flex-grow">
-                                {timetable[day] && timetable[day].length > 0 ? timetable[day].map((entry, index) => (
-                                    <ClassCard key={`desktop-${day}-${index}`} entry={entry} index={(dayIndex * 0.5) + index} />
-                                )) : (
-                                    <div className="h-full flex flex-col items-center justify-center p-4 text-center opacity-60">
-                                        <div className="w-12 h-12 rounded-full bg-platinum-200 dark:bg-onyx-800 flex items-center justify-center mb-2 border border-platinum-300 dark:border-onyx-700">
-                                            <FaCalendarDay className="text-onyx-400 dark:text-onyx-500" />
+                <div className="hidden lg:block overflow-x-auto relative custom-scrollbar pb-4">
+                    <div className="min-w-[1000px] grid grid-cols-5 gap-4">
+                        {daysOfWeek.map((day, dayIndex) => (
+                            <div key={day} className="flex flex-col bg-platinum-200/30 dark:bg-onyx-900/30 border border-platinum-200 dark:border-onyx-800/60 rounded-[2rem] p-3 shadow-inner min-h-[60vh] max-h-[80vh]">
+                                
+                                {/* Column Header */}
+                                <div className="bg-white dark:bg-onyx-800 border border-platinum-200 dark:border-onyx-700 shadow-sm rounded-[1.25rem] p-4 text-center mb-4 shrink-0 flex flex-col items-center gap-1 relative overflow-hidden">
+                                    {timetable[day]?.length > 0 && <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dark-teal-400 to-stormy-teal-600"></div>}
+                                    <h3 className="font-black text-[17px] text-onyx-900 dark:text-platinum-50 tracking-tight">{day}</h3>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-onyx-500 bg-platinum-100 dark:bg-onyx-900/60 px-2 py-0.5 rounded-md">
+                                        {timetable[day]?.length || 0} Sessions
+                                    </p>
+                                </div>
+                                
+                                {/* Column Content Area */}
+                                <div className="flex flex-col gap-3 overflow-y-auto pr-1 pb-2 custom-scrollbar flex-grow">
+                                    {timetable[day] && timetable[day].length > 0 ? timetable[day].map((entry, index) => (
+                                        <ClassCard key={`desktop-${day}-${index}`} entry={entry} index={(dayIndex * 0.5) + index} />
+                                    )) : (
+                                        <div className="h-full flex flex-col items-center justify-center p-4 text-center opacity-60">
+                                            <div className="w-12 h-12 rounded-full bg-platinum-200 dark:bg-onyx-800 flex items-center justify-center mb-2 border border-platinum-300 dark:border-onyx-700">
+                                                <FaCalendarDay className="text-onyx-400 dark:text-onyx-500" />
+                                            </div>
+                                            <p className="text-sm font-bold text-onyx-600 dark:text-onyx-400">Clear</p>
                                         </div>
-                                        <p className="text-sm font-bold text-onyx-600 dark:text-onyx-400">Clear</p>
-                                    </div>
-                                )}
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
 
             </div>

@@ -81,7 +81,7 @@ export default function TimetablePage() {
                     </motion.div>
                 
                     {/* Mobile Tab View */}
-                    <motion.div variants={itemVariants} className="md:hidden bg-white/60 dark:bg-onyx-800/40 backdrop-blur-2xl border border-platinum-100 dark:border-onyx-700/50 rounded-3xl shadow-sm dark:shadow-[0_8px_24px_rgba(0,0,0,0.4)] p-4 relative overflow-hidden">
+                    <motion.div variants={itemVariants} className="lg:hidden bg-white/60 dark:bg-onyx-800/40 backdrop-blur-2xl border border-platinum-100 dark:border-onyx-700/50 rounded-3xl shadow-sm dark:shadow-[0_8px_24px_rgba(0,0,0,0.4)] p-4 relative overflow-hidden">
                         {/* Tab Switcher */}
                         <div className="border-b border-platinum-200 dark:border-onyx-700/50 pb-2 mb-4">
                             <nav className="-mb-[2px] flex gap-2 overflow-x-auto no-scrollbar" aria-label="Tabs">
@@ -131,44 +131,46 @@ export default function TimetablePage() {
                     </motion.div>
 
                     {/* Desktop Grid View (Massive Glassmorphism Table) */}
-                    <motion.div variants={itemVariants} className="hidden md:block bg-white/60 dark:bg-onyx-800/40 backdrop-blur-2xl border border-platinum-100 dark:border-onyx-700/50 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-hidden relative">
-                        <div className="grid grid-cols-5 bg-platinum-100/50 dark:bg-onyx-900/50 backdrop-blur-md border-b border-platinum-200 dark:border-onyx-700/50">
-                            {daysOfWeek.map(day => (
-                                <div key={day} className="text-center font-extrabold tracking-wide py-4 text-onyx-900 dark:text-platinum-50 border-r border-platinum-200 dark:border-onyx-700/50 last:border-r-0 uppercase text-sm">
-                                    {day}
-                                </div>
-                            ))}
-                        </div>
-                        <div className="grid grid-cols-5 h-[65vh] overflow-hidden">
-                            {daysOfWeek.map((day, colIdx) => (
-                                <div key={day} className="border-r border-platinum-200/50 dark:border-onyx-700/30 last:border-r-0 p-3 space-y-3 overflow-y-auto no-scrollbar pb-10 bg-white/20 dark:bg-white/[0.02]">
-                                    {timetable[day]?.map((entry, index) => (
-                                        <motion.div 
-                                            whileHover={{ scale: 1.03, zIndex: 10, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.2)" }}
-                                            initial={{ opacity: 0, y: 10 }}
-                                            animate={{ opacity: 1, y: 0 }}
-                                            transition={{ delay: 0.1 * colIdx + 0.05 * index }}
-                                            key={index} 
-                                            className="group relative p-4 bg-white/80 dark:bg-onyx-900/80 backdrop-blur-xl border border-platinum-100 dark:border-onyx-700/60 rounded-xl shadow-sm transition-all cursor-default"
-                                        >
-                                            {/* Glowing indicator line */}
-                                            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dark-teal-400 to-stormy-teal-600 opacity-80 rounded-t-xl group-hover:h-1.5 transition-all"></div>
-                                            
-                                            <p className="font-extrabold text-sm text-onyx-900 dark:text-platinum-50 pt-1 tracking-tight">{entry.subject_name}</p>
-                                            <p className="text-xs font-semibold text-onyx-500 dark:text-onyx-400 mt-1 line-clamp-1">{entry.teacher_name}</p>
-                                            <div className="mt-3 inline-flex items-center gap-1.5 text-[10px] font-bold text-dark-teal-700 dark:text-stormy-teal-300 bg-dark-teal-50 dark:bg-dark-teal-900/30 px-2 py-1 rounded-md">
-                                                <FaClock className="text-dark-teal-500 dark:text-stormy-teal-400" />
-                                                {formatTime(entry.start_time).replace(':00 ', ' ')} - {formatTime(entry.end_time).replace(':00 ', ' ')}
+                    <motion.div variants={itemVariants} className="hidden lg:block bg-white/60 dark:bg-onyx-800/40 backdrop-blur-2xl border border-platinum-100 dark:border-onyx-700/50 rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] dark:shadow-[0_8px_32px_rgba(0,0,0,0.4)] overflow-x-auto relative custom-scrollbar">
+                        <div className="min-w-[900px]">
+                            <div className="grid grid-cols-5 bg-platinum-100/50 dark:bg-onyx-900/50 backdrop-blur-md border-b border-platinum-200 dark:border-onyx-700/50">
+                                {daysOfWeek.map(day => (
+                                    <div key={day} className="text-center font-extrabold tracking-wide py-4 text-onyx-900 dark:text-platinum-50 border-r border-platinum-200 dark:border-onyx-700/50 last:border-r-0 uppercase text-sm">
+                                        {day}
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="grid grid-cols-5 h-[65vh] overflow-hidden">
+                                {daysOfWeek.map((day, colIdx) => (
+                                    <div key={day} className="border-r border-platinum-200/50 dark:border-onyx-700/30 last:border-r-0 p-3 space-y-3 overflow-y-auto custom-scrollbar pb-10 bg-white/20 dark:bg-white/[0.02]">
+                                        {timetable[day]?.map((entry, index) => (
+                                            <motion.div 
+                                                whileHover={{ scale: 1.03, zIndex: 10, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.2)" }}
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                transition={{ delay: 0.1 * colIdx + 0.05 * index }}
+                                                key={index} 
+                                                className="group relative p-4 bg-white/80 dark:bg-onyx-900/80 backdrop-blur-xl border border-platinum-100 dark:border-onyx-700/60 rounded-xl shadow-sm transition-all cursor-default"
+                                            >
+                                                {/* Glowing indicator line */}
+                                                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-dark-teal-400 to-stormy-teal-600 opacity-80 rounded-t-xl group-hover:h-1.5 transition-all"></div>
+                                                
+                                                <p className="font-extrabold text-sm text-onyx-900 dark:text-platinum-50 pt-1 tracking-tight">{entry.subject_name}</p>
+                                                <p className="text-xs font-semibold text-onyx-500 dark:text-onyx-400 mt-1 line-clamp-1">{entry.teacher_name}</p>
+                                                <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[10px] font-bold text-dark-teal-700 dark:text-stormy-teal-300 bg-dark-teal-50 dark:bg-dark-teal-900/30 px-2 py-1 rounded-md">
+                                                    <FaClock className="text-dark-teal-500 dark:text-stormy-teal-400 shrink-0" />
+                                                    <span className="truncate">{formatTime(entry.start_time).replace(':00 ', ' ')} - {formatTime(entry.end_time).replace(':00 ', ' ')}</span>
+                                                </div>
+                                            </motion.div>
+                                        ))}
+                                        {(!timetable[day] || timetable[day].length === 0) && (
+                                            <div className="h-full flex items-center justify-center opacity-30">
+                                                <span className="text-sm font-bold text-onyx-400 -rotate-90 whitespace-nowrap">Free Day</span>
                                             </div>
-                                        </motion.div>
-                                    ))}
-                                    {(!timetable[day] || timetable[day].length === 0) && (
-                                        <div className="h-full flex items-center justify-center opacity-30">
-                                            <span className="text-sm font-bold text-onyx-400 -rotate-90 whitespace-nowrap">Free Day</span>
-                                        </div>
-                                    )}
-                                </div>
-                            ))}
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </motion.div>
                 </motion.div>
