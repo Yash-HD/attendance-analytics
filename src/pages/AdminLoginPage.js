@@ -92,8 +92,17 @@ const AdminLoginPage = () => {
                 </div>
                 
                 <h2 className="text-3xl font-extrabold text-onyx-900 dark:text-platinum-50 tracking-tight mb-2 group-hover:text-dark-teal-700 dark:group-hover:text-white transition-colors">Admin Access</h2>
-                <p className="text-sm font-semibold text-onyx-500 dark:text-onyx-400 mb-8">System configurations & wide controls</p>
+                <p className="text-sm font-semibold text-onyx-500 dark:text-onyx-400 mb-6">System configurations & wide controls</p>
                 
+                {/* Mock Credentials Card */}
+                <div className="mb-8 p-3 bg-dark-teal-50 dark:bg-dark-teal-900/30 border border-dark-teal-200 dark:border-dark-teal-800/50 rounded-xl flex flex-col gap-1 items-center text-center relative z-20">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-dark-teal-700 dark:text-dark-teal-400">Demo Credentials</span>
+                    <div className="flex gap-4 text-sm font-black text-onyx-800 dark:text-platinum-200">
+                        <span>ID: <code className="font-mono bg-white/60 dark:bg-black/30 px-1.5 py-0.5 rounded text-dark-teal-600 dark:text-dark-teal-400">ADMIN01</code></span>
+                        <span>PWD: <code className="font-mono bg-white/60 dark:bg-black/30 px-1.5 py-0.5 rounded text-dark-teal-600 dark:text-dark-teal-400">password123</code></span>
+                    </div>
+                </div>
+
                 <form onSubmit={handleSubmit} className="space-y-6 relative z-20">
                     <div>
                         <label htmlFor="adminId" className="block text-xs font-bold uppercase tracking-widest text-onyx-500 dark:text-onyx-400 mb-2 pl-1">
