@@ -13,10 +13,10 @@ export default function QRCodeScannerModal({ isOpen, onClose }) {
       const position = await new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
-      const location = {
-        latitude: position.coords.latitude,
-        longitude: position.coords.longitude,
-      };
+      // const location = {
+      //   latitude: position.coords.latitude,
+      //   longitude: position.coords.longitude,
+      // };
 
       // --- SIMULATION ---
       // This simulates a backend call with a 1.5-second delay

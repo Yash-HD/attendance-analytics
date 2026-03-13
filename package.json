@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.11.0",
     "date-fns": "^4.1.0",
+    "framer-motion": "^12.36.0",
     "html5-qrcode": "^2.3.8",
     "qrcode.react": "^4.2.0",
     "react": "^19.1.1",
